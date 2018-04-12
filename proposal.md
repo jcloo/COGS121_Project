@@ -4,10 +4,10 @@ newsFeeddd
 
 Team Members:
 
-Jan Eric de Castro A12886770
-Cameron Lee A12898315
-Joel Loo A12623303
-German Flores A12963291
+Jan Eric de Castro
+Cameron Lee 
+Joel Loo 
+German Flores 
 
 Proposal Paragraph(s):
 
