@@ -1,6 +1,4 @@
-## Team Name:
-
-***newsFeeddd***
+## Team Name: ***newsFeeddd***
 
 ## Team Members:
 
