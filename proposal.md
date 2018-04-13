@@ -5,7 +5,7 @@
 - **Jan Eric De Castro** 
 - **Cameron Lee** 
 - **Joel Loo** 
-- **German Flores Alcala** 
+- **German Flores** 
 
 ## Project Proposal Paragraphs:
 
