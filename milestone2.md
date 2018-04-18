@@ -7,7 +7,7 @@
 
 ## Storyboards:
 
-![Storyboard 1](https://github.com/jcloo/COGS121_Project/images/storyboard1.png)
+![Storyboard 1](https://github.com/jcloo/COGS121_Project/blob/master/images/prototype1_1.PNG)
 ![Storyboard 2](/images/storyboard2.png)
 
 ## Prototype 1:
