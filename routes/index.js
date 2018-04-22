@@ -3,6 +3,6 @@
  * GET home page.
  */
 
-exports.view = function(req, res){
+exports.view = (req, res) => {
   res.render('index');
 };
