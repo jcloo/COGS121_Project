@@ -1,4 +1,23 @@
-#map-container {
-	height: 200px;
-	width: 200px;
+body { 
+	margin:0; padding:0; 
 }
+ 
+
+
+.main-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.news-feed-container {
+	width: 300px;
+	height: 100vh;
+}
+
+#map { 
+ 	position:absolute; 
+ 	top:0; 
+ 	bottom:0; 
+ 	width:80%; 
+ }
