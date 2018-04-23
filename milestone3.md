@@ -5,6 +5,12 @@
 - **Joel Loo** 
 - **German Flores** 
 
-## Storyboards:
+## UI Skeleton:
 
 ![Login Screen](https://github.com/jcloo/COGS121_Project/blob/master/public/images/screen1.png)
+
+![Login Screen](https://github.com/jcloo/COGS121_Project/blob/master/public/images/screen2.png)
+
+![Login Screen](https://github.com/jcloo/COGS121_Project/blob/master/public/images/screen3.png)
+
+![Login Screen](https://github.com/jcloo/COGS121_Project/blob/master/public/images/screen4.png)
