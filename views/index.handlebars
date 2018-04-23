@@ -8,10 +8,20 @@
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 </head>
 <body>
     <div class="main-container">
-        <div class="news-feed-container"></div>
+
+        <div class="news-feed-container">
+          <button>Get JSON data</button>
+          <ul id="articles">
+
+          </ul>
+
+        </div>
+
         <div class="map-container">
             <div id='map'></div>
         </div>
@@ -27,7 +37,7 @@ var map = new mapboxgl.Map({
     zoom: 12 // starting zoom
 });
 </script>
-
+<script src="js/index.js"></script>
 
 </body>
 </html>
