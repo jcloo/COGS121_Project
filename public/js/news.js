@@ -20,7 +20,8 @@ function initializePage() {
         console.log('You received some data!', data);
 				const num_Articles = data.response.docs.length;
 				for(i=0; i<num_Articles; i++) {
-          $('.news-headline').append('<h1>' + data.response.docs[i].headline.main + '</h1>');
+					const web_url = data.response.docs[i].web_url;
+          $('.news-headline').append('<h1><a href="' + web_url + '">' + data.response.docs[i].headline.main + '</h1>');
 			  }
       },
     });
