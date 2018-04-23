@@ -1,9 +1,9 @@
-## Team:
+## Team Members:
 
-**Jan Eric de Castro**
-**Cameron Lee**
-**Joel Loo**
-**German Flores**
+- **Jan Eric De Castro** 
+- **Cameron Lee** 
+- **Joel Loo** 
+- **German Flores** 
 
 ## Storyboards:
 
