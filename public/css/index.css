@@ -13,6 +13,11 @@ body {
 	height: 100vh;
 }
 
+#refreshFeed {
+	align-content: center;
+	margin-left: 40%;
+}
+
 #map {
  	position:absolute;
  	top:0;
@@ -27,13 +32,13 @@ body {
 }
 
 /* MAP */
-
+/*
 .clickMe {
   height: 30px;
   width: 100px;
   background-color: red;
 }
-
+*/
 /* Menu */
 
 body

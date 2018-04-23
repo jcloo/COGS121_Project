@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 	initializePage();
 });
@@ -9,10 +8,25 @@ $(document).ready(function() {
 function initializePage() {
 	console.log("Javascript connected!");
 
-	$('.clickMe').click(gotData);
-}
+	//const url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=bebd5673446e40c0a0613cd3ea327a8d";
+	const $articles = $('#articles');
 
+	$.ajax({
+		type: 'GET',
+		url: 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=bebd5673446e40c0a0613cd3ea327a8d',
+		dataType: 'json',
+		success: function(articles) {
+			$.each(articles.response.docs, function(i, article){
+				$articles.append(`<li>article: ${articles.response.docs[i].headline.main}</li>`);
+				console.log(articles.response.docs[i].headline.main);
+			});
+		}
+	});
+	console.log('test');
+	//$('.clickMe').click(gotData);
+};
 
+/*
 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=bebd5673446e40c0a0613cd3ea327a8d";
 
 
@@ -29,3 +43,4 @@ function gotData(data) {
 		createP(articles[i].snippet);
 	}
 }
+*/

@@ -14,28 +14,33 @@
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 </head>
+
 <body>
     <div class="header">
-        <div class="search">
-<nav role="navigation">
-  <div id="menuToggle">
-    <input type="checkbox" />
+      <div class="search">
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
 
-    <span></span>
-    <span></span>
-    <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
 
-    <ul id="menu">
-      <a href="/login"><li>Home</li></a>
-      <a href="#"><li>Profile</li></a>
-    </ul>
-  </div>
-</nav>
-        </div>
+            <ul id="menu">
+              <a href="/login"><li>Home</li></a>
+              <a href="#"><li>Profile</li></a>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
+
     <div class="main-container">
         <div id="news-feed-container">
-            <div class="clickMe"></div>
+            <button id="refreshFeed">load news</button>
+            <ul id="articles">
+
+            </ul>
         </div>
         <div class="map-container">
             <div id='map'></div>
@@ -109,8 +114,6 @@ geojson.features.forEach(function(marker) {
 
 
 <script type="text/javascript" src='js/news.js'></script>
-
-
 
 </body>
 </html>
