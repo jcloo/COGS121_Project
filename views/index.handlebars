@@ -27,8 +27,9 @@
             <span></span>
 
             <ul id="menu">
-              <a href="/login"><li>Home</li></a>
-              <a href="#"><li>Profile</li></a>
+              <a href="/login"><li>Login</li></a>
+              <a href="/"><li>Home</li></a>
+              <a href="/profile"><li>Profile</li></a>
             </ul>
           </div>
         </nav>
@@ -41,74 +42,79 @@
             <hr />
             <ul id="articles"></ul>
         </div>
+
         <div class="map-container">
             <div id='map'></div>
         </div>
     </div>
 
 <script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiaGFpamFuIiwiYSI6ImNqZWt1aGUzNjQ1YnAydmxueGl4ejIxcXEifQ.BePDVwa3Jj_6B89oTQ0LNA';
-var geojson = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {
-                "message": "Foo",
-                "iconSize": [60, 60]
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-117.2340, 32.8801]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "message": "Bar",
-                "iconSize": [50, 50]
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-117.25, 32.89]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
-                "message": "Baz",
-                "iconSize": [40, 40]
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [-117.232, 32.8903]
-            }
-        }
-    ]
-};
-var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v9', //hosted style id
-    center: [-117.2340, 32.8801], // starting position
-    zoom: 12 // starting zoom
-});
-// add markers to map
-geojson.features.forEach(function(marker) {
-    // create a DOM element for the marker
-    var el = document.createElement('div');
-    el.className = 'marker';
-    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
-    el.style.width = marker.properties.iconSize[0] + 'px';
-    el.style.height = marker.properties.iconSize[1] + 'px';
-    el.style.borderRadius = '50%';
-    var popup = new mapboxgl.Popup()
-        .setText('Construction on the Washington Monument began in 1848.');
-    // add marker to map
-    new mapboxgl.Marker(el)
-        .setLngLat(marker.geometry.coordinates)
-        .setPopup(popup)
-        .addTo(map);
-});
+  mapboxgl.accessToken = 'pk.eyJ1IjoiaGFpamFuIiwiYSI6ImNqZWt1aGUzNjQ1YnAydmxueGl4ejIxcXEifQ.BePDVwa3Jj_6B89oTQ0LNA';
+  var geojson = {
+      "type": "FeatureCollection",
+      "features": [
+          {
+              "type": "Feature",
+              "properties": {
+                  "message": "Foo",
+                  "iconSize": [60, 60]
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [-117.2340, 32.8801]
+              }
+          },
+          {
+              "type": "Feature",
+              "properties": {
+                  "message": "Bar",
+                  "iconSize": [50, 50]
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [-117.25, 32.89]
+              }
+          },
+          {
+              "type": "Feature",
+              "properties": {
+                  "message": "Baz",
+                  "iconSize": [40, 40]
+              },
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [-117.232, 32.8903]
+              }
+          }
+      ]
+  };
+
+  var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v9', //hosted style id
+      center: [-117.2340, 32.8801], // starting position
+      zoom: 12 // starting zoom
+  });
+
+  // add markers to map
+  geojson.features.forEach(function(marker) {
+      // create a DOM element for the marker
+      var el = document.createElement('div');
+      el.className = 'marker';
+      el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+      el.style.width = marker.properties.iconSize[0] + 'px';
+      el.style.height = marker.properties.iconSize[1] + 'px';
+      el.style.borderRadius = '50%';
+
+      var popup = new mapboxgl.Popup()
+          .setText('Construction on the Washington Monument began in 1848.');
+
+      // add marker to map
+      new mapboxgl.Marker(el)
+          .setLngLat(marker.geometry.coordinates)
+          .setPopup(popup)
+          .addTo(map);
+  });
 </script>
 
 
