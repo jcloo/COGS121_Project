@@ -10,7 +10,7 @@ body {
 
 #news-feed-container {
 	width: 400px;
-	height: 100vh;
+	height: 100%;
 }
 
 #refreshFeed {
@@ -18,11 +18,16 @@ body {
 	margin-left: 40%;
 }
 
+#articleImg {
+	width: 20%;
+	height: 20%;
+}
 #map {
  	position:absolute;
  	top:0;
  	bottom:0;
  	width:80%;
+	height: 350%;
  }
 
 .header {
