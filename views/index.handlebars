@@ -5,6 +5,9 @@
     <meta charset='utf-8' />
     <title>newsFeeddd</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -12,32 +15,108 @@
 
 </head>
 <body>
-    <div class="main-container">
+    <div class="header">
+        <div class="search">
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
 
-        <div class="news-feed-container">
-          <button>Get JSON data</button>
-          <ul id="articles">
+    <span></span>
+    <span></span>
+    <span></span>
 
-          </ul>
-
+    <ul id="menu">
+      <a href="/login"><li>Home</li></a>
+      <a href="#"><li>Profile</li></a>
+    </ul>
+  </div>
+</nav>
         </div>
-
+    </div>
+    <div class="main-container">
+        <div id="news-feed-container">
+            <div class="clickMe"></div>
+        </div>
         <div class="map-container">
             <div id='map'></div>
         </div>
     </div>
 
-
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGFpamFuIiwiYSI6ImNqZWt1aGUzNjQ1YnAydmxueGl4ejIxcXEifQ.BePDVwa3Jj_6B89oTQ0LNA';
+
+var geojson = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "message": "Foo",
+                "iconSize": [60, 60]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-117.2340, 32.8801]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "message": "Bar",
+                "iconSize": [50, 50]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-117.25, 32.89]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "message": "Baz",
+                "iconSize": [40, 40]
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [-117.232, 32.8903]
+            }
+        }
+    ]
+};
+
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v9', //hosted style id
     center: [-117.2340, 32.8801], // starting position
     zoom: 12 // starting zoom
 });
+
+
+// add markers to map
+geojson.features.forEach(function(marker) {
+    // create a DOM element for the marker
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.style.backgroundImage = 'url(https://placekitten.com/g/' + marker.properties.iconSize.join('/') + '/)';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
+    el.style.borderRadius = '50%';
+
+    var popup = new mapboxgl.Popup()
+        .setText('Construction on the Washington Monument began in 1848.');
+
+    // add marker to map
+    new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(popup)
+        .addTo(map);
+});
 </script>
-<script src="js/index.js"></script>
+
+
+<script type="text/javascript" src='js/news.js'></script>
+
+
 
 </body>
 </html>
