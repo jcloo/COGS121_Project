@@ -7,4 +7,4 @@
 
 ## Storyboards:
 
-![Storyboard 1](https://github.com/jcloo/COGS121_Project/blob/master/public/images/storyboard1.PNG)
+![Login Screen](https://github.com/jcloo/COGS121_Project/blob/master/public/images/screen1.PNG)
