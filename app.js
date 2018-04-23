@@ -3,6 +3,7 @@
  * Module dependencies.
  */
 
+var twitter = require('twitter');
 var express = require('express');
 var http = require('http');
 var path = require('path');
@@ -31,6 +32,16 @@ app.use(express.cookieParser('IxD secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+//setup for twitter
+var twitter = new twitter({
+  consumer_key: 'Vfcl0zUNc4HJ5yYrV3O70c9Jo',
+  consumer_secret: 'QhO2sYilcH0YnnzM6D2rGvpQU34WUNZN2dDiMQuzHkihBjr5dl
+',
+  access_token_key: '988196835733852161-7KII29b1RBoeRJ3yeEfbg88YTIeKsOo',
+  access_token_secret: '8yq12zjcn83xQMcee8VA1aJgxHy2q3hZZVDx9KDBGQbqi
+'
+});
 
 // development only
 if ('development' == app.get('env')) {
