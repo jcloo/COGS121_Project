@@ -11,10 +11,13 @@
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
 </head>
 <body>
     <div class="header">
         <div class="search">
+<<<<<<< HEAD
             <nav role="navigation">
               <div id="menuToggle">
                 <input type="checkbox" />
@@ -30,6 +33,22 @@
                 </ul>
               </div>
             </nav>
+=======
+<nav role="navigation">
+  <div id="menuToggle">
+    <input type="checkbox" />
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="menu">
+      <a href="/login"><li>Home</li></a>
+      <a href="#"><li>Profile</li></a>
+    </ul>
+  </div>
+</nav>
+>>>>>>> 405f39f64f4814a2e6510a2b51486b2f815c1086
         </div>
     </div>
     <div class="main-container">
@@ -107,12 +126,14 @@ geojson.features.forEach(function(marker) {
     // add marker to map
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
-        .setPopup(popup) 
+        .setPopup(popup)
         .addTo(map);
 });
 </script>
 
+
 <script type="text/javascript" src='js/news.js'></script>
+
 
 
 </body>
